@@ -7,31 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    if (!("a" in window)) {
-        var a = 1;
-    }
-    alert(a); // -> undefined - переменная а объявлена после условия сравнения
-    
-    var b = function a(x) {
-        x && a(--x);
-    };
-    alert(a); // Ничего не вывеведет - имя именованной функции видно только внутри функции
-    
-    function a(x) {
-        return x * 2;
-    }
-    var a; // Ничего не вывеведет - нет инструментов вывода вроде alert();
-    
-    alert(a);
-    function b(x, y, a) {
-        arguments[2] = 10;
-        alert(a);
-    }
-    b(1, 2, 3); // Ошибка или ничего - arguments[2] не соответствует параметру а
-    
-    function a() {
-        alert(this);
-    }
-    a.call(null); // Если я правильно понял еще на 6м уроке - this всегда ссылается на window
+    <div>
+        <p>
+            if (!("a" in window)) { <br>
+                var a = 1;<br>
+            }<br>
+            alert(a); // -> undefined - переменная а объявлена после условия сравнения<br>
+        </p>
+        <p>
+            var b = function a(x) { <br>
+                x && a(--x);<br>
+            };<br>
+            alert(a); // Ничего не вывеведет - имя именованной функции видно только внутри функции<br>
+        </p>
+        <p>
+            function a(x) {<br>
+                return x * 2;<br>
+            }<br>
+            var a; <br>
+            alert(a); // ответа не знаю, но выводит все тело функции;<br>
+        </p>
+        <p>
+            function b(x, y, a) {<br>
+                arguments[2] = 10;<br>
+                alert(a);<br>
+            }<br>
+            b(1, 2, 3); // Ошибка или ничего - arguments[2] не соответствует параметру а<br>
+        </p>
+        <p>
+            function a() {<br>
+                alert(this);<br>
+            }<br>
+            a.call(null); // Если я правильно понял еще на 6м уроке - this всегда ссылается на window<br>
+        </p>
+    </div>
 </body>
 </html>
